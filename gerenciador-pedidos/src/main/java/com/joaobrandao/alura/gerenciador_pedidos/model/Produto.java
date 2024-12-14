@@ -1,4 +1,4 @@
-package model;
+package com.joaobrandao.alura.gerenciador_pedidos.model;
 
 
 import jakarta.persistence.*;
@@ -14,11 +14,24 @@ public class Produto {
     @Column(name="valor")
     private double preco;
 
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
     public Produto() {}
 
     public Produto(String nome, double preco) {
         this.nome = nome;
         this.preco = preco;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+
+        this.categoria = categoria;
     }
 
     public Long getId() {

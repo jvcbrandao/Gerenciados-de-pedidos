@@ -1,4 +1,4 @@
-package model;
+package com.joaobrandao.alura.gerenciador_pedidos.model;
 
 import jakarta.persistence.*;
 
@@ -17,6 +17,9 @@ public class Pedido {
 
     public Pedido(LocalDate data) {
         this.data = data;
+    }
+
+    public Pedido(long l, LocalDate now) {
     }
 
     public LocalDate getData() {
